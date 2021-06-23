@@ -11,6 +11,43 @@
 <title>ToDos-App</title>
 </head>
 <body>
+  <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color:lightgray;">
+        <h5 class="modal-title" id="exampleModalLabel"><strong><b>Add New Task</b></strong></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+          <div class="mb-3">
+            <label for="imageurl" class="form-label">Image Url</label>
+            <input type="url" class="form-control" id="imageurl" aria-describedby="Image url" placeholder="http://example.com/image.jpg"/>
+          </div>
+
+          <div class="mb-3">
+            <label for="tasktitle" class="form-label">Task Title</label>
+            <input type="text" class="form-control" id="tasktitle" placeholder="Main heading for remember"/>
+          </div>
+
+          <div class="mb-3">
+            <label for="tasktype" class="form-label">Task Type</label>
+            <input type="text" class="form-control" id="tasktype" placeholder="Work Info"/>
+          </div>
+
+          <div class="mb-3">
+            <label for="exampleInputdesc" class="form-label">Task Description</label>
+            <textarea rows="5" class="form-control" id="taskdescription" placeholder="Description related to info"></textarea>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" onclick="saveChanges()">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
   <nav class="navbar navbar-expand-md navbar-light bg-light">
     <div class="container-fluid">
       <h1 class="navbar-brand fw-bold">
@@ -26,7 +63,7 @@
           </li>
         </ul> 
       
-      <button type="button" class="btn btn-primary ml-auto"><i class="fas fa-plus-circle"></i> Add New</button>
+      <button type="button" class="btn btn-primary ml-auto" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fas fa-plus-circle"></i> Add New</button>
       </div>
     </div>
   </nav>
@@ -44,7 +81,7 @@
   </div>
     
     <section>
-      <div class="row">
+      <div class="row task__container">
         <div class="col-md-3 col-lg-4">
           <div class="card text-center mt-5">
             <div class="card-header d-flex justify-content-end gap-2">
@@ -63,43 +100,6 @@
           </div>
         </div>
 
-        <div class="col-md-3 col-lg-4">
-          <div class="card text-center mt-5">
-            <div class="card-header d-flex justify-content-end gap-2">
-              <button type="button" class="btn btn-success"><i class="far fa-edit"></i></button>
-              <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
-            </div>
-            <img src="https://wallpapercave.com/wp/iLqTLXV.jpg"class="card-img-top" alt="Nature">
-            <div class="card-body">
-              <h5 class="card-title">Out of the World</h5>
-              <p class="card-text">e moon's orbit and phases are mysteries to many. For example, the moon always shows us the same face, but how much of it we see depends on the moon's position in relation to Earth and the sun.</p>
-              <a href="https://www.shutterstock.com/search/world+nature+day" class="btn btn-warning">Reference Link</a>
-            </div>
-            <div class="card-footer">
-              <button type="button" class="btn btn-outline-primary float-end">Open Task</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-3 col-lg-4">
-          <div class="card text-center mt-5">
-            <div class="card-header d-flex justify-content-end gap-2">
-              <button type="button" class="btn btn-success"><i class="far fa-edit"></i></button>
-              <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
-            </div>
-            <img src="https://c4.wallpaperflare.com/wallpaper/495/922/373/flower-hd-1080p-high-quality-wallpaper-preview.jpg" class="card-img-top" alt="Nature">
-            <div class="card-body">
-              <h5 class="card-title">Yoga Day</h5>
-              <p class="card-text">The International Day of yoga has been celebrated annually on 21 June since 2015, following its inception in the United Nations General Assembly in 2014. Yoga is a physical, mental and spiritual practice which originated in India.</p>
-              <a href="https://www.shutterstock.com/search/world+nature+day" class="btn btn-warning">Reference Link</a>
-            </div>
-            <div class="card-footer">
-              <button type="button" class="btn btn-outline-primary float-end">Open Task</button>
-            </div>
-          </div>
-        </div>
-
-
       </div>
     </section>
 
@@ -108,5 +108,9 @@
   <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 
+
+<script src="index.js">
+
+</script>
 </body>
 </html>
